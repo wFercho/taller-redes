@@ -2,7 +2,6 @@
 import {
     Dropdown,
     DropdownItems,
-    DropdownSubmenu,
     Astronav,
 } from "astro-navbar";
 ---
@@ -10,7 +9,7 @@ import {
 <nav>
     <Astronav>
         <ul class="flex items-center gap-x-12 text-white text-lg h-full">
-            <li><a href="">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li>
                 <Dropdown class="group">
                     <button class="flex items-center">
@@ -31,24 +30,35 @@ import {
                     </button>
                     <DropdownItems class="relative">
                         <div
-                            class="lg:absolute top-2 w-40 border shadow rounded p-2"
+                            class="lg:absolute top-5 w-44 border shadow rounded p-2 bg-slate-800"
                         >
                             <ul>
                                 <li>
-                                    <a href="#">Menu 1</a>
+                                    <a href="/windows-server/conf-inicial">Conf inicial</a>
                                 </li>
                                 <li>
-                                    <a href="#">Menu 2</a>
+                                    <a href="/windows-server/dns">DNS</a>
                                 </li>
-                                <li></li>
-                                <li></li>
+                                <li>
+                                    <a href="/windows-server/ftp">FTP</a>
+                                </li>
+                                <li>
+                                    <a href="/windows-server/smtp">SMTP</a>
+                                </li>
+                                <li>
+                                    <a href="/windows-server/dhcp">DHCP</a>
+                                </li>
+                                <li>
+                                    <a href="/windows-server/http">HTTP</a>
+                                </li>
+                                
                             </ul>
                         </div>
                     </DropdownItems>
                 </Dropdown>
             </li>
             <li><a href="">Linux</a></li>
-            <li><a href="">About</a></li>
+            <li><a href="/about">About</a></li>
         </ul>
     </Astronav>
 </nav>
