@@ -1,0 +1,120 @@
+---
+import { Image } from "astro:assets";
+import ImageContainer from "../../components/ImageContainer.astro";
+import TittleH2 from "../../components/TittleH2.astro";
+import Layout from "../../layouts/Layout.astro";
+import prev5 from "./img/prev/5.png";
+
+import img1 from "./img/dhcp/1.png";
+import img2 from "./img/dhcp/2.png";
+import img3 from "./img/dhcp/3.png";
+import img4 from "./img/dhcp/4.png";
+import img5 from "./img/dhcp/5.png";
+import img6 from "./img/dhcp/6.png";
+import img7 from "./img/dhcp/7.png";
+import img8 from "./img/dhcp/8.png";
+import img9 from "./img/dhcp/9.png";
+import img10 from "./img/dhcp/10.png";
+import img11 from "./img/dhcp/11.png";
+
+---
+
+<Layout title="DHCP">
+    <TittleH2 id="servidor-dhcp">Servidor DHCP</TittleH2>
+    <p>
+        <em
+            >&quot;Cada dispositivo de una red basada en TCP/IP debe tener una
+            dirección IP de unidifusión única para acceder a la red y sus
+            recursos. Sin DHCP, las direcciones IP de los equipos nuevos o de
+            los equipos que se mueven de una subred a otra deben configurarse
+            manualmente, mientras que las direcciones IP de los equipos que se
+            quitan de la red deben recuperarse manualmente&quot;.</em
+        >
+        <br>
+        <em
+            >&quot;Con DHCP, todo este proceso está automatizado y se administra
+            de forma centralizada. El servidor DHCP mantiene un grupo de
+            direcciones IP y concede una dirección a cualquier cliente
+            habilitado para DHCP cuando se inicia en la red. Dado que las
+            direcciones IP son dinámicas (concedidas) en lugar de estáticas
+            (asignadas permanentemente), las direcciones que ya no están en uso
+            se devuelven automáticamente al grupo para la reasignación&quot;.</em
+        >
+        <a
+            class="font-semibold"
+            href="https://learn.microsoft.com/es-es/windows-server/networking/technologies/dhcp/dhcp-top"
+            >Articulo de Microsoft</a
+        >
+    </p>
+    <p>
+        
+        <br />
+        <br />
+
+        Nuevamente abrimos nuestro <strong>Administrador del Servidor</strong>,
+        estando en este nos dirigimos a la barra de navegación y desplegamos el
+        menú de la pestaña <strong>Administrar</strong>. Elegimos <strong
+            >Agregar roles y caracteristicas</strong
+        >.
+        <ImageContainer>
+            <Image src={prev5} alt="" width={600} height={600} />
+        </ImageContainer>
+        Seleccionamos <strong>Servidor DHCP</strong>
+        <ImageContainer>
+            <Image src={img1} alt="" width={600} height={600} />
+        </ImageContainer>
+        Agregamos las caracteristicas adicionales
+        <ImageContainer>
+            <Image src={img2} alt="" width={600} height={600} />
+        </ImageContainer>
+        Una vez finalizada la instalación, damos click en <strong
+            >Completar configuración de DHCP</strong
+        >
+        <ImageContainer>
+            <Image src={img3} alt="" width={600} height={600} />
+        </ImageContainer>
+        Estando en el <em>Asistente posterior a la instalación de DHCP</em> damos
+        <strong>Siguiente</strong>
+        <ImageContainer>
+            <Image src={img4} alt="" width={600} height={600} />
+        </ImageContainer>
+        En la pestaña de <strong>Autorización</strong> verificamos que se haga referencia
+        al usuario administrador y damos en <strong>Confirmar</strong>
+        <ImageContainer>
+            <Image src={img5} alt="" width={600} height={600} />
+        </ImageContainer>
+        Ahora nos dirigimos al <strong>Administrador de DHCP</strong>, y en la
+        pestaña de <strong>IPv4</strong> creamos un <strong>Ámbito nuevo</strong
+        >
+        <ImageContainer>
+            <Image src={img6} alt="" width={600} height={600} />
+        </ImageContainer>
+        En el <strong>Asistente para ámbito nuevo</strong> especificamos un nombre
+        y una descripción a este.
+        <ImageContainer>
+            <Image src={img7} alt="" width={600} height={600} />
+        </ImageContainer>
+        Ingresamos el intervalo de direcciones del ámbito, desde <strong
+            >192.168.17.100</strong
+        > hasta <strong>192.168.17.254</strong>
+        <ImageContainer>
+            <Image src={img8} alt="" width={600} height={600} />
+        </ImageContainer>
+        Dejamos la <strong>Duración de la concesión</strong> por defecto, que son
+        8 días.
+        <ImageContainer>
+            <Image src={img9} alt="" width={600} height={600} />
+        </ImageContainer>
+        Ingresamos la IP de puerta de enlace que previamente habiamos definido <strong
+            >192.168.17.1</strong
+        >
+        <ImageContainer>
+            <Image src={img10} alt="" width={600} height={600} />
+        </ImageContainer>
+        Verificamos el dominio y la IP a la que hace referencia.
+        <ImageContainer>
+            <Image src={img11} alt="" width={600} height={600} />
+        </ImageContainer>
+        Ya con eso podemos finalizar.
+    </p>
+</Layout>

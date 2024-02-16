@@ -1,0 +1,136 @@
+---
+import { Image } from "astro:assets";
+import ImageContainer from "../../components/ImageContainer.astro";
+import TittleH2 from "../../components/TittleH2.astro";
+import Layout from "../../layouts/Layout.astro";
+import prev5 from "./img/prev/5.png";
+
+import img1 from "./img/smtp/1.png";
+import img2 from "./img/smtp/2.png";
+import img3 from "./img/smtp/3.png";
+import img4 from "./img/smtp/4.png";
+import img5 from "./img/smtp/5.png";
+import img6 from "./img/smtp/6.png";
+import img7 from "./img/smtp/7.png";
+import img8 from "./img/smtp/8.png";
+import img9 from "./img/smtp/9.png";
+import img10 from "./img/smtp/10.png";
+import img11 from "./img/smtp/11.png";
+import img12 from "./img/smtp/12.png";
+import img13 from "./img/smtp/13.png";
+import img14 from "./img/smtp/14.png";
+import img15 from "./img/smtp/15.png";
+import img16 from "./img/smtp/16.png";
+import img18 from "./img/smtp/18.png";
+import img19 from "./img/smtp/19.png";
+---
+
+<Layout title="SMTP">
+    <TittleH2 id="servidor-smtp">Servidor SMTP</TittleH2>
+    <p>
+        <em
+            >&quot;Un servidor SMTP, también conocido como servidor de correo
+            saliente, es una computadora o un software que administra los
+            mensajes del correo electrónico salientes. En general, un servidor
+            de correo se refiere a un sistema que recopila, administra y envía
+            correos electrónicos. Un servidor SMTP se refiere específicamente al
+            componente del servidor de correo que utiliza el protocolo simple de
+            transferencia de correo (SMTP) para enviar correos salientes.
+            Mientras que el servidor de correo administra los correos
+            electrónicos entrantes y salientes, el servidor SMTP se ocupa solo
+            de enviar y retransmitir los correos electrónicos salientes a los
+            destinos apropiados. También puede denominarse servidor de correo
+            electrónico saliente&quot;.</em
+        >
+        <a class="font-semibold" href="https://aws.amazon.com/es/what-is/smtp/">¿Qué es SMTP?</a>
+        <br />
+        <br />
+        <br />
+        Nuevamente abrimos nuestro <strong>Administrador del Servidor</strong>,
+        estando en este nos dirigimos a la barra de navegación y desplegamos el
+        menú de la pestaña <strong>Administrar</strong>. Elegimos <strong
+            >Agregar roles y caracteristicas</strong
+        >.
+        <ImageContainer>
+            <Image src={prev5} alt="" width={600} height={600}/>
+        </ImageContainer>
+        En la pestaña de <strong>Caracteristicas</strong> seleccionamos <strong
+            >Servidor SMTP</strong
+        >
+        <ImageContainer>
+            <Image src={img1} alt="" width={600} height={600}/>
+        </ImageContainer>
+        Agregamos caracteristicas adicionales.
+        <ImageContainer>
+            <Image src={img2} alt="" width={600} height={600}/>
+        </ImageContainer>
+        Finalizada la instalación nos dirigimos a <strong>Herramientas</strong> de
+        la barra de navegación del <strong>Administrador de Servidor</strong> y seleccionamos
+        <strong>Administrador de Information Services (IIS) 6.0</strong>
+        <ImageContainer>
+            <Image src={img3} alt="" width={600} height={600}/>
+        </ImageContainer>
+        Nos vamos a <strong>Servidor virtual SMTP...</strong>
+        <ImageContainer>
+            <Image src={img4} alt="" width={600} height={600}/>
+        </ImageContainer>
+        Le damos un nombre
+        <ImageContainer>
+            <Image src={img5} alt="" width={600} height={600}/>
+        </ImageContainer>
+        Seleccionamos nuestr IP <strong>192.168.17.2</strong>
+        <ImageContainer>
+            <Image src={img6} alt="" width={600} height={600}/>
+        </ImageContainer>
+        Le indicamos la ruta del directorio principal de subdirectorios para contenido
+        SMTP
+        <ImageContainer>
+            <Image src={img7} alt="" width={600} height={600}/>
+        </ImageContainer>
+        Ingresamos nuestro dominio
+        <ImageContainer>
+            <Image src={img8} alt="" width={600} height={600}/>
+        </ImageContainer>
+        Como tenemos que gestionar el envio de correos por POP3, descargamos e instalamos
+        <strong>Visendo SMTP Extender Communnity</strong>
+        <ImageContainer>
+            <Image src={img9} alt="" width={600} height={600}/>
+        </ImageContainer>
+        Aceptamos terminos
+        <ImageContainer>
+            <Image src={img10} alt=""width={600} height={600} />
+        </ImageContainer>
+        Le damos un nombre y en <strong>Organization</strong> ingresamos nuestro
+        dominio
+        <ImageContainer>
+            <Image src={img11} alt=""width={600} height={600} />
+        </ImageContainer>
+        Una vez instalado, podemos verificar que nuestra IP aparece asociada
+        <ImageContainer>
+            <Image src={img12} alt=""width={600} height={600} />
+        </ImageContainer>
+        Para crear una cuenta solo ingresamos una dirección de correo y una contraseña
+        <ImageContainer>
+            <Image src={img13} alt=""width={600} height={600} />
+        </ImageContainer>
+        En este panel podemos ver las cuentas creadas
+        <ImageContainer>
+            <Image src={img14} alt=""width={600} height={600} />
+        </ImageContainer>
+        Instalamos Foxmail
+        <ImageContainer>
+            <Image src={img15} alt=""width={600} height={600} />
+        </ImageContainer>
+        Cuando lo ejecutamos tenemos que elegir <strong>Other MailBox</strong>
+        <ImageContainer>
+            <Image src={img16} alt=""width={600} height={600} />
+        </ImageContainer>
+        Creamos una cuenta con nuestro dominio
+        <ImageContainer>
+            <Image src={img18} alt=""width={600} height={600} />
+        </ImageContainer>
+        <ImageContainer>
+            <Image src={img19} alt=""width={600} height={600} />
+        </ImageContainer>
+    </p>
+</Layout>

@@ -1,0 +1,260 @@
+---
+import { Image } from "astro:assets";
+import ImageContainer from "../../components/ImageContainer.astro";
+import TittleH2 from "../../components/TittleH2.astro";
+import TitleH3 from "../../components/TitleH3.astro";
+import Layout from "../../layouts/Layout.astro";
+
+import directrices from "./img/directrices.png";
+import isos from "./img/isos.png";
+import vb from "./img/vb.png";
+import w1 from "./img/w1.png";
+
+import img1 from "./img/prev/1.png";
+import img2 from "./img/prev/2.png";
+import img3 from "./img/prev/3.png";
+import img4 from "./img/prev/4.png";
+import img5 from "./img/prev/5.png";
+import img6 from "./img/prev/6.png";
+import img7 from "./img/prev/7.png";
+import img8 from "./img/prev/8.png";
+import img9 from "./img/prev/9.png";
+import img10 from "./img/prev/10.png";
+import img11 from "./img/prev/11.png";
+import img12 from "./img/prev/12.png";
+import img13 from "./img/prev/13.png";
+import img14 from "./img/prev/14.png";
+import img15 from "./img/prev/15.png";
+import img16 from "./img/prev/16.png";
+import img17 from "./img/prev/17.png";
+import img18 from "./img/prev/18.png";
+---
+
+<Layout title="Configuración inicial">
+    <TittleH2 id="configuraci-n-previa">Configuración inicial</TittleH2>
+    <TitleH3 id="virtualbox">VirtualBox</TitleH3>
+    <p>
+        En esta practica se hizo uso del software de virtualización <a
+            href="https://www.virtualbox.org/">VirtualBox</a
+        >, especificamente la versión 7.0, pero se pudo haber hecho uso de otro
+        software de virtualización. El proceso de descarga e instalación de
+        este, junto a otras consideraciones, se encuentra especificados en esta
+        misma página. En caso de duda o inconveniente se recomienda revisar esta
+        página.<br />
+        <ImageContainer>
+            <Image src={vb} alt="VirtualBox" width={600} height={600} />
+        </ImageContainer>
+        <br />
+    </p>
+    <h3 id="iso-windows-server-2012-r2">ISO Windows Server 2012-R2</h3>
+    <p>
+        La página oficial de <a
+            href="https://www.microsoft.com/es-es/evalcenter/download-windows-server-2012-r2-essentials"
+            >Microsoft</a
+        > nos provee de enlaces de descarga de imagenes de este sistema operativo
+        en varios idiomas, elegimos alguno de estos y lo descargamos.
+        <ImageContainer>
+            <Image src={isos} alt="ISOS" width={600} height={600} />
+        </ImageContainer>
+        Adicional a esto es importante revisar las directrices de instalación, ya
+        que en estas encontraremos la clave de producto que posteriormente necesitaremos
+        ingresar en el proceso de instalación del sistema operativo.
+        <ImageContainer>
+            <Image
+                src={directrices}
+                alt="Directrices"
+                width={600}
+                height={600}
+            />
+        </ImageContainer>
+    </p>
+    <TitleH3 id="instalando-el-sistema-operativo">
+        Instalando el sistema operativo
+    </TitleH3>
+    <p>
+        VirtualBox en el momento de cargar la ISO del sistema operativo nos
+        define un minimo recomendado de 2GB de RAM y 50GB de disco duro. Una vez
+        levantada la maquina virtual nos aparacerá la venta de instalación de
+        Windows Server 2012
+        <ImageContainer>
+            <Image src={w1} alt="" width={600} height={600} />
+        </ImageContainer>
+        Aceptamos terminos y condiciones, seleccionamos una instalación personalizada
+        e instalamos. Finalmente solo queda definir una contraseña al <strong
+            >Administrador del sistema</strong
+        >.
+    </p>
+
+    <TitleH3 id="establecer-ip-estatica">Establecer IP estatica</TitleH3>
+    <p>
+        Estando ya en el sistema operativo, nos dirigimos a las conexiones de
+        red
+        <ImageContainer>
+            <Image src={img1} alt="" width={600} height={600} />
+        </ImageContainer>
+
+        Ingresamos al <strong>Estado de Ethernet</strong>
+        <ImageContainer>
+            <Image src={img2} alt="" width={600} height={600} />
+        </ImageContainer>
+
+        Nos dirigimos a las propiedades de este e ingresamos a <strong
+            >Protocolo de Internet versión 4(TCP/IPv4)</strong
+        >
+        <ImageContainer>
+            <Image src={img3} alt="" width={600} height={600} />
+        </ImageContainer>
+
+        Estando en la ventana de propiedades definimos la dirección IP estatica <strong
+            >192.168.17.2</strong
+        >, que también queda igual para el <strong>Servidor DNS</strong> y la puerta
+        de enlace sería <strong>192.168.17.1</strong>
+        <ImageContainer>
+            <Image src={img4} alt="" width={600} height={600} />
+        </ImageContainer>
+    </p>
+    <TitleH3 id="active-directory">Active Directory</TitleH3>
+    <p>
+        <em
+            >&quot;Un directorio es una estructura jerárquica que almacena
+            información sobre objetos en la red. Un servicio de directorio, como
+            Active Directory Domain Services (AD DS), proporciona los métodos
+            para almacenar datos de directorio y poner dichos datos a
+            disposición de los usuarios y administradores de la red. Por
+            ejemplo, AD DS almacena información acerca de las cuentas de
+            usuario, como nombres, contraseñas, números de teléfono, etc., y
+            permite que otros usuarios autorizados de la misma red tengan acceso
+            a dicha información.&quot;</em
+        >
+        <a
+            href="https://learn.microsoft.com/es-es/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview"
+            class="font-semibold"
+            >Articulo Microsoft</a
+        >
+    </p>
+    <br>
+    <br>
+    <p>
+        Abrimos nuestro <strong>Administrador del Servidor</strong>, estando en
+        este nos dirigimos a la barra de navegación y desplegamos el menú de la
+        pestaña <strong>Administrar</strong>. Elegimos <strong
+            >Agregar roles y caracteristicas</strong
+        >.
+        <ImageContainer>
+            <Image src={img5} alt="" width={600} height={600} />
+        </ImageContainer>
+
+        En el asistente para agregar roles y caracteristicas seleccionamos <strong
+            >Servicios de domimio de Active Directory</strong
+        >
+        <ImageContainer>
+            <Image src={img6} alt="" width={600} height={600} />
+        </ImageContainer>
+
+        Agregamos las caracteristicas adicionales a este que nos indica el mismo
+        asistente y le damos en instalar.
+        <ImageContainer>
+            <Image src={img7} alt="" width={600} height={600} />
+        </ImageContainer>
+
+        Una vez instalado se van a requerir pasos adicionales para que la
+        maquina pueda ser un controlador de dominio. Para solo tenemos que dar
+        click en el texto de <strong
+            >Promover este servidor a controlador de dominio</strong
+        >
+        <ImageContainer>
+            <Image src={img8} alt="" width={600} height={600} />
+        </ImageContainer>
+
+        En la confifuración de la implementación seleccionamos <strong
+            >Agregar un nuevo bosque</strong
+        > e ingresamos un nombre de dominio raiz.
+        <ImageContainer>
+            <Image src={img9} alt="" width={600} height={600} />
+        </ImageContainer>
+
+        Establecemos una contraseña para la restauración de servicios de
+        directorio (DSRM)
+        <ImageContainer>
+            <Image src={img10} alt="" width={600} height={600} />
+        </ImageContainer>
+
+        Podemos cambiar o dejar el <strong>Nombre de dominio NetBIOS</strong> asignado
+        al dominio. Teniendo en cuenta siempre que este no debe superar los <strong
+            >15 caracteres</strong
+        >.
+        <ImageContainer>
+            <Image src={img11} alt="" width={600} height={600} />
+        </ImageContainer>
+
+        Una vez comprobado lo hecho en los pasos anteriores ya podemos iniciar
+        la instalación
+        <ImageContainer>
+            <Image src={img12} alt="" width={600} height={600} />
+        </ImageContainer>
+
+        Luego de reiniciar, en el inicio de sesión veremos el nombre de NetBIOS
+        anteponer al usuario administrador, pero para estar completamente
+        seguros de que todo quedó instalado podemos hacer uso del comando <strong
+            >Get-ADDomain</strong
+        > en PowerShell
+    </p>
+    <TitleH3 id="iis-internet-information-service-">
+        IIS (Internet Information Service)
+    </TitleH3>
+    <p>
+        IIS es un servidor web de Microsoft que se ejecuta en sistemas
+        operativos Windows, en este caso en Windows Server 2012 R2. Se utiliza
+        para intercambiar contenido web dinámico y estático con usuarios de
+        Internet. IIS también se puede utilizar para administrar, implementar y
+        alojar aplicaciones web utilizando tecnologías como PHP y ASPNET.
+    </p>
+    <p>
+        Nuevamente abrimos nuestro <strong>Administrador del Servidor</strong>,
+        estando en este nos dirigimos a la barra de navegación y desplegamos el
+        menú de la pestaña <strong>Administrar</strong>. Elegimos <strong
+            >Agregar roles y caracteristicas</strong
+        >.
+        <ImageContainer>
+            <Image src={img5} alt="" width={600} height={600} />
+        </ImageContainer>
+
+        Seleccionamos <strong>Servidor web (IIS)</strong>
+        <ImageContainer>
+            <Image src={img13} alt="" width={600} height={600} />
+        </ImageContainer>
+
+        Agregamos caracteristicas adicionales a este servidor
+        <ImageContainer>
+            <Image src={img14} alt="" width={600} height={600} />
+        </ImageContainer>
+
+        Dejamos los servicios de rol que nos marca por defecto
+        <ImageContainer>
+            <Image src={img15} alt="" width={600} height={600} />
+        </ImageContainer>
+
+        Luego instalamos
+        <ImageContainer>
+            <Image src={img16} alt="" width={600} height={600} />
+        </ImageContainer>
+
+        Finalmente si vamos al Administrador de IIS, mediante un página creada
+        por defecto podemos comprobar que el dominio que ingresamos en el Active
+        Directory funciona. Para esto elegimos la opción de <strong
+            >Examinar*:80(http)</strong
+        >
+        <ImageContainer>
+            <Image src={img17} alt="" width={600} height={600} />
+        </ImageContainer>
+
+        Esto nos redirecciona al localhost, pero si ingresamos a <em
+            ><a href="http://fernandosalamanca.com.co"
+                >http://fernandosalamanca.com.co</a
+            ></em
+        > veremos el mismo contenido.
+        <ImageContainer>
+            <Image src={img18} alt="" width={600} height={600} />
+        </ImageContainer>
+    </p>
+</Layout>

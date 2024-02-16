@@ -1,0 +1,167 @@
+---
+import { Image } from "astro:assets";
+import ImageContainer from "../../components/ImageContainer.astro";
+import TittleH2 from "../../components/TittleH2.astro";
+import Layout from "../../layouts/Layout.astro";
+import prev5 from "./img/prev/5.png";
+
+import img1 from "./img/ftp/1.png";
+import img2 from "./img/ftp/2.png";
+import img3 from "./img/ftp/3.png";
+import img4 from "./img/ftp/4.png";
+import img5 from "./img/ftp/5.png";
+import img6 from "./img/ftp/6.png";
+import img7 from "./img/ftp/7.png";
+import img8 from "./img/ftp/8.png";
+import img9 from "./img/ftp/9.png";
+import img10 from "./img/ftp/10.png";
+import img11 from "./img/ftp/11.png";
+import img12 from "./img/ftp/12.png";
+import img13 from "./img/ftp/13.png";
+import img14 from "./img/ftp/14.png";
+import img15 from "./img/ftp/15.png";
+import img16 from "./img/ftp/16.png";
+import img17 from "./img/ftp/17.png";
+import img18 from "./img/ftp/18.png";
+import img19 from "./img/ftp/19.png";
+---
+
+<Layout title="FTP">
+    <TittleH2 id="servidor-ftp">Servidor FTP</TittleH2>
+    <p>
+        <em
+            >&quot;Los servidores de FTP son aplicaciones de software que
+            posibilitan la transferencia de archivos de un dispositivo (es
+            decir, una computadora con Mac, Windows o Linux) a otro. Puede
+            parecer complicado, pero los servidores del FTP son simplemente
+            computadoras que tienen una dirección del FTP y se dedican a recibir
+            conexiones del FTP. Realizan dos simples tareas: “obtener” y
+            “poner”.&quot;</em
+        >
+        <a href="https://experience.dropbox.com/es-la/resources/what-is-ftp"
+        class="font-semibold"
+            >¿Qué es FTP?</a
+        >
+        <br />
+        <br />
+        <br />
+        Nuevamente abrimos nuestro <strong>Administrador del Servidor</strong>,
+        estando en este nos dirigimos a la barra de navegación y desplegamos el
+        menú de la pestaña <strong>Administrar</strong>. Elegimos <strong
+            >Agregar roles y caracteristicas</strong
+        >.
+        <ImageContainer>
+            <Image src={prev5} alt="" width={600} height={600} />
+        </ImageContainer>
+        Dentro del apartado de <strong>Servidor IIS</strong> encontramos el <strong
+            >Servidor FTP</strong
+        >, lo seleccionamos.
+        <ImageContainer>
+            <Image src={img1} alt="" width={600} height={600} />
+        </ImageContainer>
+        Luego en la pestaña de <strong>Herramientas</strong> del Administrador del
+        Servidor, elegimos la opción de <strong
+            >Usuarios y equipos de Active Directory</strong
+        >
+        <ImageContainer>
+            <Image src={img2} alt="" width={600} height={600} />
+        </ImageContainer>
+        Creamos una <strong>Unidad organizativa</strong>
+        <ImageContainer>
+            <Image src={img3} alt="" width={600} height={600} />
+        </ImageContainer>
+        La nombramos FTP
+        <ImageContainer>
+            <Image src={img4} alt="" width={600} height={600} />
+        </ImageContainer>
+        Ya dentro de esta podemos crear usuarios
+        <ImageContainer>
+            <Image src={img5} alt="" width={600} height={600} />
+        </ImageContainer>
+        Especificamos un nombre de pila y de inicio de sesión de usuario
+        <ImageContainer>
+            <Image src={img6} alt="" width={600} height={600} />
+        </ImageContainer>
+        Podemos elegir, de acuerdo a una contraseña ingresada, si esta nunca expirará,
+        si el usuario nunca la puede cambiar, si el usuario cambia la contraseña
+        en el siguiente inicio de sesión o si deshabilitamos directamente la cuenta.
+        <ImageContainer>
+            <Image src={img7} alt="" width={600} height={600} />
+        </ImageContainer>
+        Podemos ver los usuarios creados
+        <ImageContainer>
+            <Image src={img8} alt="" width={600} height={600} />
+        </ImageContainer>
+        Creamos un grupo en el cual podemos agregar a los usuarios que queramos de
+        los que acabamos de crear
+        <ImageContainer>
+            <Image src={img9} alt="" width={600} height={600} />
+        </ImageContainer>
+        Podemos agrager más o quitar cuando queramos.
+        <ImageContainer>
+            <Image src={img10} alt="" width={600} height={600} />
+        </ImageContainer>
+    </p>
+    <p>
+        En la carpeta <strong>inetpub</strong> del disco local, creamos una carpeta,
+        y a esta le editamos los permisos, de tal forma que solo los usuarios o grupos
+        que especifiquemos puedan interactuar con esta.
+        <ImageContainer>
+            <Image src={img11} alt="" width={600} height={600} />
+        </ImageContainer>
+        En las propiedades de la carpeta, en la pestaña de seguridad, vamos a <strong
+            >Opciones avanzadas</strong
+        >
+        <ImageContainer>
+            <Image src={img12} alt="" width={600} height={600} />
+        </ImageContainer>
+        Damos en <strong>Deshabilitar herencia</strong>
+        <ImageContainer>
+            <Image src={img13} alt="" width={600} height={600} />
+        </ImageContainer>
+        Seleccionamos la opción de <strong
+            >Convertir los permisos heredados en permisos explicitos en este
+            objeto</strong
+        >
+        <ImageContainer>
+            <Image src={img14} alt="" width={600} height={600} />
+        </ImageContainer>
+        Damos <strong>Aceptar</strong>. Ya devuelta a este menú hacemos click en <strong
+            >Editar</strong
+        >
+        <ImageContainer>
+            <Image src={img12} alt="" width={600} height={600} />
+        </ImageContainer>
+        Agregamos el grupo previamente creado
+        <ImageContainer>
+            <Image src={img15} alt="" width={600} height={600} />
+        </ImageContainer>
+        Desde el Administrador de IIS seleccionamos <strong
+            >Agregar sitio FTP</strong
+        >
+        <ImageContainer>
+            <Image src={img16} alt="" width={600} height={600} />
+        </ImageContainer>
+        Le damos un nombre y le indicamos la ruta de la carpeta a la que previamente
+        le habiamos modificado el acceso
+        <ImageContainer>
+            <Image src={img17} alt="" width={600} height={600} />
+        </ImageContainer>
+        Especificamos nuestra IP <strong>192.168.17.2</strong>, además del
+        puerto que siempre se maneja para FTP <strong>21</strong>. Aunque
+        recomendado, de momento no usaremos <strong>SSL</strong>
+        <ImageContainer>
+            <Image src={img18} alt="" width={600} height={600} />
+        </ImageContainer>
+        Indicamos <strong>Autenticación básica</strong>, en <strong
+            >Autorización</strong
+        > le permitimos el acceso solamente a <strong
+            >Roles o grupos de usuarios especificados</strong
+        >, seguido a eso colocamos el nombre del grupo en este caso <strong
+            >GrupoFTP</strong
+        > con permisos de lectura.
+        <ImageContainer>
+            <Image src={img19} alt="" width={600} height={600} />
+        </ImageContainer>
+    </p>
+</Layout>

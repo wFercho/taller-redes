@@ -1,0 +1,113 @@
+---
+import { Image } from "astro:assets";
+import ImageContainer from "../../components/ImageContainer.astro";
+import TittleH2 from '../../components/TittleH2.astro'
+import Layout from "../../layouts/Layout.astro";
+import img1 from "./img/dns/1.png";
+import img2 from "./img/dns/2.png";
+import img3 from "./img/dns/3.png";
+import img4 from "./img/dns/4.png";
+import img5 from "./img/dns/5.png";
+import img6 from "./img/dns/6.png";
+import img7 from "./img/dns/7.png";
+import img8 from "./img/dns/8.png";
+import img9 from "./img/dns/9.png";
+import img10 from "./img/dns/10.png";
+import img11 from "./img/dns/11.png";
+import img12 from "./img/dns/12.png";
+import img13 from "./img/dns/13.png";
+import img14 from "./img/dns/14.png";
+---
+
+<Layout title="DNS">
+    <TittleH2 id="servidor-dns">Servidor DNS</TittleH2>
+    <p>
+        <em
+            >&quot;Los servidores DNS convierten las solicitudes de nombres en
+            direcciones IP, con lo que se controla a qué servidor se dirigirá un
+            usuario final cuando escriba un nombre de dominio en su navegador
+            web. Estas solicitudes se denominan consultas.&quot;</em
+        >
+        <a
+        class="font-semibold"
+            href="https://aws.amazon.com/es/route53/what-is-dns/#:~:text=Los%20servidores%20DNS%20convierten%20las,Estas%20solicitudes%20se%20denominan%20consultas."
+            >¿Qué es DNS?</a
+        >
+        
+    </p>
+    <br />
+    <br />
+
+    <p>
+        Si hasta el momento todo se ha seguido en orden, en el proceso de instalación
+        del Active Directory se tuvo que haber instalado DNS, por lo que solo tendríamos
+        que configurarlo.
+        Ingresamos al <strong>Administrador de DNS</strong>
+        <ImageContainer>
+            <Image src={img1} alt="" width={600} height={600} />
+        </ImageContainer>
+        En el menú lateral ingresamos a <strong
+            >Zonas de busqueda directa</strong
+        >, ingresamos a nuestro dominio y seleccionamos la opción de <strong
+            >Host Nuevo</strong
+        >
+        <ImageContainer>
+            <Image src={img2} alt="" width={600} height={600} />
+        </ImageContainer>
+        Especificamos un nombre la dirección IP <strong>192.168.17.2</strong>
+        <ImageContainer>
+            <Image src={img3} alt="" width={600} height={600} />
+        </ImageContainer>
+        Posteriormente en <strong>Zonas de busqueda inversa</strong> vamos a <strong
+            >Zona nueva</strong
+        >
+        <ImageContainer>
+            <Image src={img4} alt="" width={600} height={600} />
+        </ImageContainer>
+        En el <strong>Asistente para nueva zona</strong> avanceremos con lo que nos
+        da por defecto
+        <ImageContainer>
+            <Image src={img5} alt="" width={600} height={600} />
+        </ImageContainer>
+        <ImageContainer>
+            <Image src={img6} alt="" width={600} height={600} />
+        </ImageContainer>
+        <ImageContainer>
+            <Image src={img7} alt="" width={600} height={600} />
+        </ImageContainer>
+        <ImageContainer>
+            <Image src={img8} alt="" width={600} height={600} />
+        </ImageContainer>
+        Acá especificamos los tres primeros octetos de nuestra dirección IP <strong
+            >192.168.17.</strong
+        >
+        <ImageContainer>
+            <Image src={img9} alt="" width={600} height={600} />
+        </ImageContainer>
+        En esta parte es importante seleccionar <strong
+            >No adminitr actualizaciones dinámicas</strong
+        >, ya que como colocamos la dirección IP de forma estatica al servidor
+        DNS no queremos que esta cambie.
+        <ImageContainer>
+            <Image src={img10} alt="" width={600} height={600} />
+        </ImageContainer>
+        Ya con esto finalizamos.
+        <ImageContainer>
+            <Image src={img11} alt="" width={600} height={600} />
+        </ImageContainer>
+        Seleccionamos la zona que acabamos de crear y seleccionamos <strong
+            >Nuevo Puntero (PTR)</strong
+        >
+        <ImageContainer>
+            <Image src={img12} alt="" width={600} height={600} />
+        </ImageContainer>
+        Seleccionamos el host previamente creado
+        <ImageContainer>
+            <Image src={img13} alt="" width={600} height={600} />
+        </ImageContainer>
+        Comprobamos que todo esté en orden, y damos <strong>Aceptar</strong>.
+        <ImageContainer>
+            <Image src={img14} alt="" width={400} height={400} />
+        </ImageContainer>
+    </p>
+</Layout>

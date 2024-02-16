@@ -1,0 +1,27 @@
+---
+import { Image } from "astro:assets";
+import ImageContainer from "../../components/ImageContainer.astro";
+import TittleH2 from "../../components/TittleH2.astro";
+import Layout from "../../layouts/Layout.astro";
+
+import img1 from './img/http/1.png'
+import img2 from './img/http/2.png'
+---
+
+<Layout title="HTTP">
+    <TittleH2 id="p-gina-web-http">Página web HTTP</TittleH2>
+    <p>
+        En el <strong>Administrador de IIS</strong>, en la pestaña de <strong
+            >Sitios</strong
+        >, en página que nos sale por defecto, vamos a <strong
+            >Administrar sitio web</strong
+        > y luego a <strong>Configuración avanzada</strong>
+        <ImageContainer>
+            <Image src={img1} alt="" width={600} height={600}/>
+        </ImageContainer>
+        Estando ahí unicamente modificamos la ruta de acceso fisica de nuestra página
+        <ImageContainer>
+            <Image src={img2} alt="" width={600} height={600}/>
+        </ImageContainer>
+    </p>
+</Layout>
