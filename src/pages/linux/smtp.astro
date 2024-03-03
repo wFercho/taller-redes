@@ -1,0 +1,86 @@
+---
+import { Image } from "astro:assets";
+import ImageContainer from "../../components/ImageContainer.astro";
+import TittleH2 from "../../components/TittleH2.astro";
+import Layout from "../../layouts/Layout.astro";
+
+import img1 from "../../img/debian/smtp/1.png";
+import img2 from "../../img/debian/smtp/2.png";
+import img3 from "../../img/debian/smtp/3.png";
+import img4 from "../../img/debian/smtp/4.png";
+import img5 from "../../img/debian/smtp/5.png";
+import img6 from "../../img/debian/smtp/6.png";
+import img7 from "../../img/debian/smtp/7.png";
+import img8 from "../../img/debian/smtp/log_user_with_domain.png";
+
+---
+
+<Layout title="SMTP">
+    <TittleH2 id="servidor-smtp">Servidor SMTP</TittleH2>
+    <p class="mb-10">
+        <em
+            >&quot;Un servidor SMTP, también conocido como servidor de correo
+            saliente, es una computadora o un software que administra los
+            mensajes del correo electrónico salientes. En general, un servidor
+            de correo se refiere a un sistema que recopila, administra y envía
+            correos electrónicos. Un servidor SMTP se refiere específicamente al
+            componente del servidor de correo que utiliza el protocolo simple de
+            transferencia de correo (SMTP) para enviar correos salientes.
+            Mientras que el servidor de correo administra los correos
+            electrónicos entrantes y salientes, el servidor SMTP se ocupa solo
+            de enviar y retransmitir los correos electrónicos salientes a los
+            destinos apropiados. También puede denominarse servidor de correo
+            electrónico saliente&quot;.</em
+        >
+        <a class="font-semibold block mt-2" href="https://aws.amazon.com/es/what-is/smtp/"
+            >¿Qué es SMTP?</a
+        >
+    </p>
+
+    <p>Instalamos el paquete <span class="font-bold">post-fix,</span> con la configuración por 
+    defecto podemos iniciar el servicio de este.</p>
+    <ImageContainer>
+        <Image src={img1} alt="" width={600} height={600} />
+    </ImageContainer>
+    <p>Inmediatamente a la instalación de este se nos abre en la misma terminal un menú:</p>
+    <ImageContainer>
+        <Image src={img2} alt="" width={600} height={600} />
+    </ImageContainer>
+    <p>Elegimos la opción de <span class="font-bold">Internet Site</span></p>
+    <ImageContainer>
+        <Image src={img3} alt="" width={600} height={600} />
+    </ImageContainer>
+    <p>A continuación ingresamos el nombre del sistema de correo:</p>
+    <ImageContainer>
+        <Image src={img4} alt="" width={600} height={600} />
+    </ImageContainer>
+    <p>Instalmamos <span class="font-bold">dovecot-core</span> y <span class="font-bold">dovecot-pop3d</span>
+    </p>
+    <ImageContainer>
+        <Image src={img5} alt="" width={600} height={600} />
+    </ImageContainer>
+    <p>Aunque recomendado, en este caso desactivaremos ssl, lo ideal es tenerlo activado, 
+        pero esto implica otras configuraciones que para propositos de este tutorial no contemplaremos, 
+        nos limitaremos a ver la funcionalidad principal que es la de mandar y recibir correos.
+    </p>
+    <ImageContainer>
+        <Image src={img6} alt="" width={600} height={600} />
+    </ImageContainer>
+    <p>Desactivamos la opción que no nos permite autenticarnos con texto plano, de nuevo, 
+        el objetivo de este tutorial no cubre temas de seguridad.
+    </p>
+    <ImageContainer>
+        <Image src={img7} alt="" width={600} height={600} />
+    </ImageContainer>
+    <p>Algo a tener en cuenta que es importante, es que si queremos hacer uso de nuestro 
+        dominio para los usuarios que intentan ingresar a su correo, tenemos que agregar el 
+        siguiente formato para la autenticación
+    </p>
+    <ImageContainer>
+        <Image src={img8} alt="" width={600} height={600} />
+    </ImageContainer>
+    <p class="italic p-5"><span class="font-bold">NOTA:</span> Ante cualquier modificación que hagamos 
+        para la configuración de dovecot y/o postfix, es imperativo recargar o en su defecto 
+        reiniciar cada uno de los servicios asociados a estos dos paquetes.
+    </p>
+</Layout>

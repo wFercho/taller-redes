@@ -1,0 +1,64 @@
+---
+import { Image } from "astro:assets";
+import ImageContainer from "../../components/ImageContainer.astro";
+import TittleH2 from "../../components/TittleH2.astro";
+import TitleH3 from "../../components/TitleH3.astro";
+import Layout from "../../layouts/Layout.astro";
+
+import vb from "../../img/vb.png";
+import img1 from "../../img/debian/prev/1.png"
+import img2 from "../../img/debian/prev/2.png"
+import img3 from "../../img/debian/prev/3.png"
+import img4 from "../../img/debian/prev/4.png"
+
+---
+
+<Layout title="Configuración inicial">
+    <TittleH2 id="configuraci-n-previa">Configuración inicial</TittleH2>
+    <TitleH3 id="virtualbox">VirtualBox</TitleH3>
+    <p>
+        En esta practica se hizo uso del software de virtualización <a
+            href="https://www.virtualbox.org/">VirtualBox</a
+        >, especificamente la versión 7.0, pero se pudo haber hecho uso de otro
+        software de virtualización. El proceso de descarga e instalación de
+        este, junto a otras consideraciones, se encuentra especificados en esta
+        misma página. En caso de duda o inconveniente se recomienda revisar esta
+        página.<br />
+        <ImageContainer>
+            <Image src={vb} alt="VirtualBox" width={600} height={600} />
+        </ImageContainer>
+        <br />
+    </p>
+    <TitleH3 id="install-debian12">Instalación Debian 12 en maquina virtual</TitleH3>
+    <p>Para descagar la última distribución disponible de Debian nos dirigimos ha 
+        su página principal, en esta, dependiendo de la fecha en que se esté leyendo esto 
+        puede que encontremos como última versión Debian 12 u otra versión mayor.
+        Simplemente descargamos el archivo <span class="font-bold">.iso</span> teniendo en cuenta si queremos o 
+        podemos ejecutar una versión de 32 bits o de 64 bits.
+    </p>
+    <ImageContainer>
+        <Image src={img1} alt="Instalación debian 12" width={600} height={600} />
+    </ImageContainer>
+    <TitleH3 id="ip-static-debian">IP estatica</TitleH3>
+    <p>Primero identificamos el nombre de nuestra tarjeta de red, con el siguiente comando:</p>
+    <ImageContainer>
+        <Image src={img2} alt="tarjeta-red-debian" width={600} height={600} />
+    </ImageContainer>
+    <p class="italic p-5"><span class="font-bold">NOTA:</span> Es importante ejecutar estos comandos con usuario que cuente con privilegios necesarios 
+        para este proposito. Por lo que podemos hacer login como ese usuario o anteponemos <span class="font-bold">sudo</span> junto 
+        con el nombre del usuario e ingresamos la contraseña.
+    </p>
+    <p>Nos dirigimos al archivo de configuración de la tarjeta de red e ingresamos lo 
+        siguiente teniendo en cuenta el nombre de la tarjerta de red y dirección IP estatica 
+        deseado
+    </p>
+    <ImageContainer>
+        <Image src={img3} alt="Instalación debian 12" width={600} height={600} />
+    </ImageContainer>
+    <p>En la configuración cableada, en IPv4 ingresamos la <span class="font-bold">netmask</span> correspondiente 
+        a nuestra IP, ingresamos la IP <span class="font-bold">gateway</span> y finalmente la IP de nuestro <span class="font-bold">DNS</span>.
+    </p>
+    <ImageContainer>
+        <Image src={img4} alt="Instalación debian 12" width={600} height={600} />
+    </ImageContainer>
+</Layout>

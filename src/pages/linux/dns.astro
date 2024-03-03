@@ -1,0 +1,64 @@
+---
+import { Image } from "astro:assets";
+import ImageContainer from "../../components/ImageContainer.astro";
+import TittleH2 from '../../components/TittleH2.astro'
+import Layout from "../../layouts/Layout.astro";
+
+import img1 from "../../img/debian/dns/1.png"
+import img2 from "../../img/debian/dns/2.png"
+import img3 from "../../img/debian/dns/3.png"
+import img4 from "../../img/debian/dns/4.png"
+import img5 from "../../img/debian/dns/5.png"
+import img6 from "../../img/debian/dns/6.png"
+
+---
+
+<Layout title="DNS">
+    <TittleH2 id="servidor-dns">Servidor DNS</TittleH2>
+    <p class="mb-10">
+        <em
+            >&quot;Los servidores DNS convierten las solicitudes de nombres en
+            direcciones IP, con lo que se controla a qué servidor se dirigirá un
+            usuario final cuando escriba un nombre de dominio en su navegador
+            web. Estas solicitudes se denominan consultas.&quot;</em
+        >
+        <a
+        class="font-semibold block mt-3"
+            href="https://aws.amazon.com/es/route53/what-is-dns/#:~:text=Los%20servidores%20DNS%20convierten%20las,Estas%20solicitudes%20se%20denominan%20consultas."
+            >¿Qué es DNS?</a
+        >
+    </p>
+    <p>Descargamos el paquete <span class="font-bold">bind9</span> con el siguiente comando:</p>
+    <ImageContainer>
+        <Image src={img1} alt="" width={600} height={600} />
+    </ImageContainer>
+    <p>Copiando los dos archivos dentro del directorio de configuración de bind9 
+        definiremos el compotarmiento de zona directa en inversa para nuestro  <span class="font-bold">DNS</span>
+    </p>
+    <ImageContainer>
+        <Image src={img2} alt="" width={600} height={600} />
+    </ImageContainer>
+    <p>En el archivo de zona directa definimos el nombre de nuestro domino junto con la IP a la que hace referencia:</p>
+    <ImageContainer>
+        <Image src={img3} alt="" width={600} height={600} />
+    </ImageContainer>
+    <p>Para la zona inversa especificamos el dominio nuevamente:</p>
+    <ImageContainer>
+        <Image src={img4} alt="" width={600} height={600} />
+    </ImageContainer>
+    <p>En el archivo <span class="font-bold">named.cof.local</span> en la misma ubiación 
+        hacemos referencia a los dos archivos que acabamos de crear y configurar, definiendo 
+        además la zona y el tipo, teniendo en cuenta que la zona que la definición de la zona 
+        inversa difiere de la zona directa.
+    </p>
+    <ImageContainer>
+        <Image src={img5} alt="" width={600} height={600} />
+    </ImageContainer>
+    <p>Por último modificamos el archivo de configuración de nuestro gestor network, en el 
+        que hacemos referencia a la IP de nuestro servidor junto con el dominio que definimos 
+        previamente.
+    </p>
+    <ImageContainer>
+        <Image src={img6} alt="" width={600} height={600} />
+    </ImageContainer>
+</Layout>

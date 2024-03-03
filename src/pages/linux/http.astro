@@ -1,0 +1,27 @@
+---
+import { Image } from "astro:assets";
+import ImageContainer from "../../components/ImageContainer.astro";
+import TittleH2 from "../../components/TittleH2.astro";
+import Layout from "../../layouts/Layout.astro";
+
+import img1 from "../../img/debian/http/1.png";
+import img2 from "../../img/debian/http/2.png";
+import img5 from "../../img/debian/http/5.png";
+---
+
+<Layout title="HTTP">
+    <TittleH2 id="p-gina-web-http">Página web HTTP</TittleH2>
+    <p>Instalamos <span class="font-bold">apache2</span></p>
+    <ImageContainer>
+        <Image src={img1} alt="" width={600} height={600} />
+    </ImageContainer>
+    En los siguientes comandos se crea una carpeta para alojar nuestra página web
+    en la ruta definina por apache para alojar los archivos correspondientes, como
+    lo son html, css, javascript y assets
+    <ImageContainer>
+        <Image src={img2} alt="" width={600} height={600} />
+    </ImageContainer>
+    <ImageContainer>
+        <Image src={img5} alt="" width={600} height={600} />
+    </ImageContainer>
+</Layout>

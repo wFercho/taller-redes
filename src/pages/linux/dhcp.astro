@@ -1,0 +1,63 @@
+---
+import { Image } from "astro:assets";
+import ImageContainer from "../../components/ImageContainer.astro";
+import TittleH2 from "../../components/TittleH2.astro";
+import Layout from "../../layouts/Layout.astro";
+
+import img1 from "../../img/debian/dhcp/1.png";
+import img2 from "../../img/debian/dhcp/2.png";
+import img3 from "../../img/debian/dhcp/3.png";
+import img4 from "../../img/debian/dhcp/4.png";
+---
+
+<Layout title="DHCP">
+    <TittleH2 id="servidor-dhcp">Servidor DHCP</TittleH2>
+    <p class="mb-10">
+        <em
+            >&quot;Cada dispositivo de una red basada en TCP/IP debe tener una
+            dirección IP de unidifusión única para acceder a la red y sus
+            recursos. Sin DHCP, las direcciones IP de los equipos nuevos o de
+            los equipos que se mueven de una subred a otra deben configurarse
+            manualmente, mientras que las direcciones IP de los equipos que se
+            quitan de la red deben recuperarse manualmente&quot;.</em
+        >
+        <br />
+        <em
+            >&quot;Con DHCP, todo este proceso está automatizado y se administra
+            de forma centralizada. El servidor DHCP mantiene un grupo de
+            direcciones IP y concede una dirección a cualquier cliente
+            habilitado para DHCP cuando se inicia en la red. Dado que las
+            direcciones IP son dinámicas (concedidas) en lugar de estáticas
+            (asignadas permanentemente), las direcciones que ya no están en uso
+            se devuelven automáticamente al grupo para la reasignación&quot;.</em
+        >
+        <a
+            class="font-semibold block"
+            href="https://learn.microsoft.com/es-es/windows-server/networking/technologies/dhcp/dhcp-top"
+            >Articulo de Microsoft</a
+        >
+    </p>
+    <p>Instalamos el paquete <span class="font-bold">isc-dhcp-server</span></p>
+    <ImageContainer>
+        <Image src={img1} alt="" width={600} height={600} />
+    </ImageContainer>
+    <p>
+        En el archivo de configuración indicamos nuestro dominio junto con la
+        dirección IP
+    </p>
+    <ImageContainer>
+        <Image src={img2} alt="" width={600} height={600} />
+    </ImageContainer>
+    En el mismo archivo de configuración, definimos el rango de IP's
+    <ImageContainer>
+        <Image src={img3} alt="" width={600} height={600} />
+    </ImageContainer>
+    <p>
+        Por últmo en el archivo indicamos especificamos el nombre de la interfaz
+        de red que tuvimos en cuenta para el dominio, esta vez para la interfaz
+        de IPv4
+    </p>
+    <ImageContainer>
+        <Image src={img4} alt="" width={600} height={600} />
+    </ImageContainer>
+</Layout>

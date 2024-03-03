@@ -1,0 +1,56 @@
+---
+import { Image } from "astro:assets";
+import ImageContainer from "../../components/ImageContainer.astro";
+import TittleH2 from "../../components/TittleH2.astro";
+import Layout from "../../layouts/Layout.astro";
+
+import img1 from "../../img/debian/ftp/1.png";
+import img2 from "../../img/debian/ftp/2.png";
+import img3 from "../../img/debian/ftp/3.png";
+import img4 from "../../img/debian/ftp/4.png";
+import img5 from "../../img/debian/ftp/5.png";
+---
+
+<Layout title="FTP">
+    <TittleH2 id="servidor-ftp">Servidor FTP</TittleH2>
+    <p class="mb-10">
+        <em
+            >&quot;Los servidores de FTP son aplicaciones de software que
+            posibilitan la transferencia de archivos de un dispositivo (es
+            decir, una computadora con Mac, Windows o Linux) a otro. Puede
+            parecer complicado, pero los servidores del FTP son simplemente
+            computadoras que tienen una dirección del FTP y se dedican a recibir
+            conexiones del FTP. Realizan dos simples tareas: “obtener” y
+            “poner”.&quot;</em
+        >
+        <a
+            href="https://experience.dropbox.com/es-la/resources/what-is-ftp"
+            class="font-semibold">¿Qué es FTP?</a
+        >
+    </p>
+    <p>Instalamos el paquete <span class="font-bold">vsftpd</span></p>
+    <ImageContainer>
+        <Image src={img1} alt="" width={600} height={600} />
+    </ImageContainer>
+    <p>Creamos la carpeta compartida por FTP</p>
+    <ImageContainer>
+        <Image src={img2} alt="" width={600} height={600} />
+    </ImageContainer>
+    <p>En el archivo de configuración habilitamos que se pueda editar el contenido</p>
+    <ImageContainer>
+        <Image src={img3} alt="" width={600} height={600} />
+    </ImageContainer>
+    <ImageContainer>
+        <Image src={img4} alt="" width={600} height={600} />
+    </ImageContainer>
+    <p>Finalmente creamos los usuarios a nivel se sistema operativo que posteriormente 
+        podrán acceder a la carpeta compartida a través de FTP.
+    </p>
+    <p>En el caso de tener muchos usuarios, queda mucho más secillo crear un grupo e ir 
+        agregando usuarios a este. Para que puedan ingresar solo le indicamos a la carpeta 
+        que puede ser accedida, a nivel de grupo por el que acabamos de crear
+    </p>
+    <ImageContainer>
+        <Image src={img5} alt="" width={600} height={600} />
+    </ImageContainer>
+</Layout>
